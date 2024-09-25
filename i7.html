@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       
+      }
+    
+body {
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.6;
+  background:  url('img/img6.jpg') no-repeat center center/cover;
+opacity:0.8;
+  background-color: #f0f0f0;
+}
+
+
+    
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .contact-section {
+        padding: 130px 0;
+      
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 36px;
+        color: #681212;
+        margin-bottom: 40px;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+
+      .contact-item {
+    
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        box-shadow: 0px 0px  20px rgba(241, 236, 236, 0.97);
+      }
+
+      .contact-item h3 {
+        color: #8e1d1d;
+        margin-bottom: 10px;
+
+        font-size: 26px;
+      }
+
+      .contact-item p {
+        color: #f3eeee;
+        font-size: 21px;
+      }
+
+     
+
+     
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+.header:hover::before {
+  left: 100%;
+}
+.logo {
+  color: #fff;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+}
+.navbar a {
+  color: #601111;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:21px;
+  text-decoration: none;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  color: rgb(245, 242, 242);
+}
+#menu-icon {
+  font-size: 36px;
+  color: #fff;
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 1.25rem 4%;
+  }
+}
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 4%;
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .navbar a{
+    display: block;
+    margin: 1.5rem 0;
+  }
+  header img{
+   align-items:left;
+   padding:0px;
+  }
+  .nav-bg {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    height: 295px;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    display: none;
+  }
+  .nav-bg.active {
+    display: block;
+  }
+}
+
+     
+      @media (max-width: 768px) {
+        .contact-info {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .contact-item {
+          margin-bottom: 20px;
+        }
+      }
+      .site-footer {
+    background-color: #f7f2f2;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;  background-color: #7b1818;
+    color:whitesmoke;
+    
+}
+
+.footer-credits,
+.footer-copyright {
+    margin-bottom: 20px;
+}
+
+.footer-credits p,
+.footer-copyright p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.footer-copyright {
+    font-size: 14px;
+}
+
+.footer-credits p:first-child {
+    font-weight: bold;
+}
+
+.footer-credits p:nth-child(2),
+.footer-credits p:nth-child(3) {
+    font-style: italic;
+}
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-credits p,
+    .footer-copyright p {
+        font-size: 14px;
+    }
+}
+.hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #601111;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .header {
+        padding: 15px;
+      }
+      .contact-item h3{
+        font-size: 12px;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.9);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: 0.5s;
+        padding-top: 80px;
+        padding-left: 20px;
+      }
+
+      .navbar.active {
+        right: 0;
+      }
+
+      .navbar a {
+        margin: 15px 0;
+        font-size: 20px;
+      }
+
+      .hamburger {
+        display: block;
+        z-index: 101;
+      }
+
+      .hamburger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .hamburger.active .line2 {
+        opacity: 0;
+      }
+
+      .hamburger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+      
+    </style>
+  </head>
+  <body>
+
+
+    <header class="header">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/a/a5/VIT-AP_University_seal.png" width="70"height="70">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+          <a href="m.html">Home</a>
+          <a href="i.html">About</a>
+          <a href="i6.html">Committe</a>
+          <a href="i1.html">Registration</a>
+          <a href="i5.html">Events</a>
+        
+          <a href="i7.html">Contacts</a>
+        </nav>
+        <div class="hamburger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+    </header>
+    <section class="contact-section">
+      <div class="container">
+        <h1>Contact Us</h1>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>SathyaNarayan Badeti</h3>
+            <p> Department of Mathematics</p>
+          </div>
+          <div class="contact-item">
+            <h3>Email</h3>
+            <p>satyanarayana.b@vitap.ac.in</p>
+          </div>
+          <div class="contact-item">
+            <h3>Phone</h3>
+            <p>+919789353450</p>
+          </div>
+        </div>
+
+       
+      </div>
+    </section>
+    <footer class="site-footer"></footer>
+        <div class="footer-content">
+            <div class="footer-credits">
+                <p>Website Designed by</p>
+                <p>Adya Varshini.B</p>
+              
+            </div>
+            
+            <div class="footer-copyright">
+                <p>Copyright &copy; All Rights Reserved.</p>
+                <p>Department of Mathematics, School of Advanced Sciences,</p>
+                <p>VIT-AP<p>
+            </div>
+        </div>
+    </footer>
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+     const navbar = document.querySelector('.navbar');
+ 
+     hamburger.addEventListener('click', () => {
+       hamburger.classList.toggle('active');
+       navbar.classList.toggle('active');
+     });
+ 
+    
+     document.querySelectorAll('.navbar a').forEach(link => {
+       link.addEventListener('click', () => {
+         hamburger.classList.remove('active');
+         navbar.classList.remove('active');
+       });
+     });
+ </script>
+  </body>
+</html>

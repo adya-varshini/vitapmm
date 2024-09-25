@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIT Leadership</title>
+ <style>
+
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+.header:hover::before {
+  left: 100%;
+}
+.logo {
+  color: #fff;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+}
+.navbar a {
+  color: #601111;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:21px;
+  text-decoration: none;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  color: rgba(255, 255, 255, 0.434);
+}
+#menu-icon {
+  font-size: 36px;
+  color: #fff;
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 1.25rem 4%;
+  }
+}
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 4%;
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .navbar a{
+    display: block;
+    margin: 1.5rem 0;
+  }
+  header img{
+   align-items:left;
+   padding:0px;
+  }
+  .nav-bg {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    height: 295px;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    display: none;
+  }
+  .nav-bg.active {
+    display: block;
+  }
+}
+
+
+
+body {
+  background: url('img/i1.jpg') no-repeat center center/cover;;
+  background-color:#ddbfbfc9;
+  opacity: 0.8;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.leader-card h2 {
+  font-size: 18px;
+  color: #000;
+  margin: 10px 0;
+}
+
+.leader-card p {
+  font-size: 16px;
+  color: #444;
+}
+
+.leader-section {
+  text-align: center;
+  padding: 60px;
+}
+
+.section-title {
+  color: #f8f2f2;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.leader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(25% - 40px); 
+  margin: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.leader-card img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #b71c1c;
+}
+
+
+.leaders {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: nowrap; 
+}
+
+
+
+.second-row {
+  justify-content: flex-start; 
+}
+.hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #601111;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .header {
+        padding: 15px;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.9);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: 0.5s;
+        padding-top: 80px;
+        padding-left: 20px;
+      }
+
+      .navbar.active {
+        right: 0;
+      }
+
+      .navbar a {
+        margin: 15px 0;
+        font-size: 20px;
+      }
+
+      .hamburger {
+        display: block;
+        z-index: 101;
+      }
+
+      .hamburger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .hamburger.active .line2 {
+        opacity: 0;
+      }
+
+      .hamburger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+      .leader-card {
+        flex: 1 1 150px;
+        max-width: 200px;
+      }
+
+      .leader-card img {
+        height: 200px;
+      }
+      
+    }
+    .leader-section {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .section-title {
+      color: #f8f2f2;
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .leaders {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .leader-card {
+      flex: 1 1 200px;
+      max-width: 250px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .leader-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 2px solid #b71c1c;
+    }
+
+    .leader-info {
+      padding: 15px;
+    }
+
+    .leader-card h2 {
+      font-size: 18px;
+      color: #000;
+      margin-bottom: 5px;
+    }
+
+    .leader-card p {
+      font-size: 16px;
+      color: #444;
+    }
+
+
+ </style>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/a/a5/VIT-AP_University_seal.png" width="70"height="70">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+          <a href="m.html">Home</a>
+          <a href="i.html">About</a>
+          <a href="i6.html">Committe</a>
+          <a href="i1.html">Registration</a>
+          <a href="i5.html">Events</a>
+        
+          <a href="i7.html">Contacts</a>
+        </nav>
+        <div class="hamburger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+    </header>
+ <br>
+ <br>
+ <br>
+
+    <section class="leader-section">
+        <h1 class="section-title">Organizing Committe</h1>
+        
+       
+        <div class="leaders first-row">
+          <div class="leader-card">
+            <img src="https://vitap.ac.in/AVIF_Images/Leadership_Page/Dr.%20G.%20Viswanathan.avif" alt="Dr. G. Viswanathan" class="leader-img">
+            <h2>Dr. G. Viswanathan</h2>
+            <p>Founder & Chancellor, VIT</p>
+          </div>
+      
+          <div class="leader-card">
+            <img src="https://vitap.ac.in/AVIF_Images/Leadership_Page/Mr.%20Sankar%20Viswanathan.avif" alt="Mr. Sankar Viswanathan" class="leader-img">
+            <h2>Mr. Sankar Viswanathan</h2>
+            <p>Vice President, VIT</p>
+          </div>
+      
+          <div class="leader-card">
+            <img src="https://vitap.ac.in/AVIF_Images/Leadership_Page/Dr.%20Sekar%20Viswanathan.avif" alt="Dr. Sekar Viswanathan" class="leader-img">
+            <h2>Dr. Sekar Viswanathan</h2>
+            <p>Vice President, VIT</p>
+          </div>
+      
+          <div class="leader-card">
+            <img src="https://vitap.ac.in/AVIF_Images/Leadership_Page/Dr.%20G.%20V.%20Selvam.avif" alt="Mr. G.V. Selvam" class="leader-img">
+            <h2>Mr. G.V. Selvam</h2>
+            <p>Vice President, VIT</p>
+          </div>
+        </div>
+      <br>
+        <div class="leaders second-row">
+          <div class="leader-card">
+            <img src="https://vitap.ac.in/AVIF_Images/Leadership_Page/Dr.%20Sandhya%20Pentareddy.avif" alt="Leader 5" class="leader-img">
+            <h2>Dr. Sandhya Pentareddy</h2>
+            <p>Executive Director</p>
+          </div>
+      
+          <div class="leader-card">
+            <img src="https://vitap.ac.in/AVIF_Images/Leadership_Page/Dr.%20S.%20V.%20Kota%20Reddy.avif" alt="Leader 6" class="leader-img">
+            <h2>Dr. S. V. Kota Reddy</h2>
+            <p>Vice Chancellor</p>
+          </div>
+      
+          <div class="leader-card">
+            <img src="https://vitap.ac.in/AVIF_Images/Leadership_Page/Dr.-JAGADISH-CHANDRAMUDIGANTI.avif" alt="Leader 7" class="leader-img">
+            <h2>Dr. Jagadish Chandra Mudiganti</h2>
+            <p>Registrar</p>
+          </div>
+        </div>
+      </section>
+      
+  
+
+  <script > const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navbar.classList.toggle('active');
+    });
+
+   
+    document.querySelectorAll('.navbar a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navbar.classList.remove('active');
+      });
+    });</script>
+</body>
+</html>

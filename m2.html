@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Meet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 70px;
+            text-align: center;
+            color: rgba(26, 25, 25, 0.457);
+        }
+
+        .parallax-1 {
+            background: url('https://events.vitap.ac.in/storage/01J0212R2ZR8A8K1QKWY4JXDKY.webp') no-repeat center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .parallax-2, .parallax-3 {
+            background: url('img/img4.jpg') no-repeat center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .parallax-inner {
+            padding: 10% 0;
+        }
+
+        h2 {
+            font-size: 90px;
+            color: #d3c7c7;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 25px;
+            color: #f6f3f3e0;
+            text-align: center;
+            margin: 0 50px 40px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            z-index: 100;
+        }
+
+        .logo {
+            color: #6e1d1d;
+            font-size: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: default;
+        }
+
+        .navbar a {
+            color: #751515;
+            font-size: 21px;
+            text-decoration: none;
+            margin-left: 35px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #fff;
+        }
+
+        #menu-icon {
+            font-size: 36px;
+            color: #121111;
+            display: none;
+            cursor: pointer;
+        }
+
+        /* BREAKPOINTS */
+        @media (max-width: 768px) {
+            #menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 10px;
+            }
+
+            .navbar.active {
+                display: block;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 15px 0;
+                font-size: 18px;
+                color: #780f0ff7;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+
+            h2 {
+                font-size: 60px;
+            }
+
+            p {
+                font-size: 18px;
+                margin: 0 20px 20px;
+                line-height: 25px;
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .parallax-inner {
+                padding: 5% 0;
+            }
+
+            .header {
+                padding: 10px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="preload" data-preload>
+        <div class="circle"></div>
+        <p class="text">Grilli</p>
+    </div>
+
+    <header class="header">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/a/a5/VIT-AP_University_seal.png" width="70" height="70">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="m.html">Home</a>
+            <a href="i.html">About</a>
+            <a href="i6.html">Committee</a>
+            <a href="i1.html">Registration</a>
+            <a href="i5.html">Events</a>
+            <a href="i7.html">Contacts</a>
+        </nav>
+    </header>
+
+    <section class="parallax-1">
+        <div class="parallax-inner">
+            <h1>MATHEMATICAL MEET</h1>
+            <p>(VITAPMM-2024)</p>
+        </div>
+    </section>
+
+    <div class="cont">
+        <h2>ABOUT</h2>
+        <p class="tx">VIT Mathematical Meet – A National Mathematical Contest for School Students is a mega annual event...</p>
+    </div>
+
+    <section class="parallax-2"></section>
+
+    <div class="cont">
+        <h2>VIT-AP</h2>
+        <p class="tx">Vellore Institute of Technology was founded in 1984 in the name of Vellore Engineering College...</p>
+    </div>
+
+    <section class="parallax-3"></section>
+
+    <script>
+        const menuIcon = document.querySelector('#menu-icon');
+        const navbar = document.querySelector('.navbar');
+
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        });
+
+        const preloader = document.querySelector("[data-preload]");
+        window.addEventListener("load", function () {
+            preloader.classList.add("loaded");
+        });
+    </script>
+</body>
+</html>

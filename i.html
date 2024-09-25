@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+       
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background: #f2f2f2;
+ 
+   
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+p{
+  opacity:0.9;
+}
+
+h1 {
+    font-size: 70px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: rgba(26, 25, 25, 0.457);
+    
+}
+
+.parallax-1 {
+    background: url('https://events.vitap.ac.in/storage/01J0212R2ZR8A8K1QKWY4JXDKY.webp') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.parallax-2 {
+    background: url(img/img4.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.parallax-3 {
+    background: url(img/img5.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.parallax-inner {
+    padding: 10% 0;
+}
+
+h2 {
+    font-size: 90px;
+    color: #d3c7c7;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 20px 0 10px;
+}
+
+p {
+    font-size: 25px;
+    color: #f6f3f3e0;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 50px 40px;
+}
+
+p:nth-of-type(2),
+p:nth-of-type(3) {
+    margin: 40px 50px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 100;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(20, 19, 19, 0.4),
+      transparent
+    );
+    transition: 0.5s;
+  }
+  .header:hover::before {
+    left: 100%;
+  }
+  .logo {
+    color: #6e1d1d;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+  }
+  .navbar a {
+    color: #751515;
+    font-size: 21px;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: 0.3s;
+  }
+  .navbar a:hover {
+    color: rgb(252, 250, 250);
+  }
+  #menu-icon {
+    font-size: 36px;
+    color: #121111;
+    display: none;
+  }
+
+  @media (max-width: 992px) {
+    .header {
+      padding: 1.25rem 4%;
+    }
+  }
+  @media (max-width: 768px) {
+    #menu-icon {
+      display: block;
+    }
+    .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 0.5rem 4%;
+      display: none;
+    }
+    .navbar.active {
+      display: block;
+    }
+    .navbar a {
+      display: block;
+      margin: 1.5rem 0;
+    }
+    .nav-bg {
+      position: absolute;
+      top: 79px;
+      left: 0;
+      width: 100%;
+      height: 295px;
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      z-index: 99;
+      display: none;
+    }
+    .nav-bg.active {
+      display: block;
+    }
+
+}
+
+.preload {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--gold-crayola);
+  z-index: 10;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  transition: var(--transition-2);
+}
+
+.preload > * { transition: var(--transition-1); }
+
+.preload.loaded > * { opacity: 0; }
+
+.preload.loaded {
+  transition-delay: 250ms;
+  transform: translateY(100%);
+}
+
+/* Header styling */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+}
+
+/* Hamburger icon styling */
+#menu-icon {
+  font-size: 36px;
+  color: #121111;
+  display: none;
+  cursor: pointer;
+}
+
+.navbar a {
+  color: #751515;
+  font-size: 21px;
+  text-decoration: none;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: rgb(252, 250, 250);
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .navbar a {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+    color: #780f0ff7;
+  }
+
+  .nav-bg {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    height: 295px;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    display: none;
+  }
+
+  .nav-bg.active {
+    display: block;
+  }
+}
+.tx{
+  font-size: 15px;
+  color:rgb(88, 17, 17);
+  font-family:'Poppins',sans-serif;
+
+}
+
+.cont{
+  border-radius:12px;
+  border-color: #600c0c;
+ 
+
+}.hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #601111;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .header {
+        padding: 15px;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.9);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: 0.5s;
+        padding-top: 80px;
+        padding-left: 20px;
+      }
+
+      .navbar.active {
+        right: 0;
+      }
+      .parallax-inner h1{
+         font-size: 32px;
+         margin-top:40px;
+      }
+
+      .navbar a {
+        margin: 15px 0;
+        font-size: 18px;
+      }
+
+
+      .hamburger {
+        display: block;
+        z-index: 101;
+        margin-right: 20px;
+      }
+
+      .hamburger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .hamburger.active .line2 {
+        opacity: 0;
+      }
+
+      .hamburger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+      
+
+    </style>
+</head>
+
+<body>
+    
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">Grilli</p>
+  </div>
+    <header class="header">
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/a/a5/VIT-AP_University_seal.png" width="70"height="70">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+          <a href="m.html">Home</a>
+          <a href="i.html">About</a>
+          <a href="i6.html">Committe</a>
+          <a href="i1.html">Registration</a>
+          <a href="i5.html">Events</a>
+        
+          <a href="i7.html">Contacts</a>
+        </nav>
+        <div class="hamburger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+    </header>
+    <section>
+        <section class="parallax-1">
+            <div class="parallax-inner"><br>
+                <h1> MATHEMATICAL MEET</h1>
+                <p>(VITAPMM-2024)<br>
+                
+            </div>
+        </section><div class="cont">        <h2 style="font-size: 39px;">ABOUT</h2>
+            <p class="tx">VIT Mathematical Meet – A National Mathematical Contest for School
+               Students is a mega annual event organized by the Department of Mathematics,
+                School of Advanced Sciences, VIT-AP; in order to create and encourage
+                 the mathematical inventiveness in young minds at the school level. 
+                 The Department of Mathematics, School of Advanced Sciences is delighted to proclaim the
+                  VIT Mathematical Meet – 2024,to be held in VIT-AP.
+            Mathematics is an important subject which is the basis of many other subjects, such as Science, Engineering, Technology, Materials Science, Physics, Chemistry, Biology, Business, Management, Economics, Social Sciences, etc. Mathematics is the only field where the knowledge is cumulative and higher order. This Mathematical Meet will help participants to face competitions and to understand how to apply knowledge. Moreover, every interesting and worthwhile venture in life comes with some elements of pressure: competition teaches students how to handle it. Math contests are a tremendous social and intellectual opportunity for students. So, the goal of the meet is to encourage the students to develop a lifelong interest in mathematics.</p>
+          </div>
+        
+        <section class="parallax-2">
+            <div class="parallax-inner">
+               
+            </div>
+        </section>
+        <div class="cont">        <h2 style="font-size: 39px;">VIT-AP</h2>
+          <p class="tx">Vellore Institute of Technology was founded in 1984 in the name of 
+            Vellore Engineering College by the Chancellor Dr. G. Viswanathan. VIT attracts 
+            students from all the states of India and from more than 60 different countries 
+            due its academic excellence. In recognition of its excellence in academics, research
+             and extra-curricular initiatives, the University status was conferred in 2001 by Ministry
+              of Human Resource Development (MHRD), Government of India. Currently, VIT has 4 campuses
+               located in Vellore, Chennai, Amravati (AP) and Bhopal (MP). 
+               The National Institutional Ranking Framework (NIRF) has ranked VIT as
+                17th in Overall Category, 11th in Research Category, 11th in Engineering
+                 Category and 8th in University Category, announced by the Ministry of Education, 
+                 Government of India for the year 2023. VIT has accreditation by NAAC (India), IET (UK) and ABET (USA), and follows a world class academic process. VIT is the first and only University in India to get 4-Star Rating from QS - World University Rankings Organization. VIT has been ranked among the top 851-900 institutions by QS - World University Rankings, ranked among the top 601-700 institutions by Shanghai ARWU Ranking of World Universities, ranked among the top 301-350 institutions by Times Higher Education (THE) World Young University Rankings, 
+            and also ranked as 173rd best institution in Asia by QS - Asia University Rankings.</p>
+      
+        <section class="parallax-3">
+            <div class="parallax-inner">
+            
+            </div>
+        </section>
+        
+    </section>
+<script>
+   
+
+const preloader = document.querySelector("[data-preaload]");
+
+window.addEventListener("load", function () {
+  preloader.classList.add("loaded");
+  document.body.classList.add("loaded");
+});
+
+
+        const hamburger = document.querySelector('.hamburger');
+       const navbar = document.querySelector('.navbar');
+   
+       hamburger.addEventListener('click', () => {
+         hamburger.classList.toggle('active');
+         navbar.classList.toggle('active');
+       });
+   
+      
+       document.querySelectorAll('.navbar a').forEach(link => {
+         link.addEventListener('click', () => {
+           hamburger.classList.remove('active');
+           navbar.classList.remove('active');
+         });
+       });
+  
+</script>
+</body>
+
+</html>
